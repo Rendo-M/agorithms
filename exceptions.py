@@ -14,6 +14,9 @@ def main():
             raise ValueError("Ошибка: значение пола должно быть f или m")
 
     except ValueError as e:
+        if "time data" in str(e) and "does not match format" in str(e):
+            print("Ошибка: неверный формат даты рождения. Должен быть формат dd.mm.yyyy")
+            return
         print(e)
         return
     except TypeError:
